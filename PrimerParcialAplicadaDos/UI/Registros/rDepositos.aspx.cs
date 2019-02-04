@@ -57,7 +57,6 @@ namespace PrimerParcialAplicadaDos.UI
             CuentaDropDownList.DataValueField = "CuentaId";
             CuentaDropDownList.DataTextField = "Nombre";
             CuentaDropDownList.DataBind();
-            CuentaDropDownList.Items.Insert(0, new ListItem("", ""));
         }
         private Depositos LlenaClase(Depositos depositos)
         {
@@ -79,7 +78,7 @@ namespace PrimerParcialAplicadaDos.UI
 
         protected void eliminarutton_Click(object sender, EventArgs e)
         {
-            BLL.RepositorioBase<Depositos> repositorio = new BLL.RepositorioBase<Depositos>();
+            RDepositos repositorio = new RDepositos();
             int id = Util.ToInt(DepositoIdTextBox.Text);
 
             var depositos = repositorio.Buscar(id);
@@ -94,8 +93,7 @@ namespace PrimerParcialAplicadaDos.UI
 
         protected void GuardarButton_Click1(object sender, EventArgs e)
         {
-
-            BLL.RepositorioBase<Depositos> repositorio = new BLL.RepositorioBase<Depositos>();
+            RDepositos repositorio = new RDepositos();
             Depositos depositos = new Depositos();
             bool paso = false;
 

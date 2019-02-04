@@ -7,7 +7,8 @@
     <div class="card mx-auto mt-5">
             <div class="card-header text-uppercase text-center text-primary">Registro Deposito</div>
             <div class="card-body">
-                  <form>
+              
+                
     <div class="col-md-8 col-md-offset-3">
                             <div class="container">
                                 <div class="form-group">
@@ -55,13 +56,13 @@
          <div class="col-md-4 col-md-offset-3">
                         <div class="card-footer">
                             <div class="form-group">
-                                <asp:Button class="btn btn-primary" ID="nuevoButton" runat="server" Text="Nuevo" OnClick="nuevoButton_Click"  />
-                                <asp:Button class="btn btn-success" ValidationGroup="Guardar" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click1"   />
-                                <asp:Button class="btn btn-danger" ID="eliminarutton" runat="server" Text="Eliminar" OnClick="eliminarutton_Click" />
+                                <asp:Button class="btn btn-outline-info btn-md" ID="nuevoButton" runat="server" Text="Nuevo" OnClick="nuevoButton_Click"  />
+                                <asp:Button class="btn btn-outline-success btn-md" ValidationGroup="Guardar" ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click1"   />
+                                <asp:Button class="btn btn-outline-danger btn-md" ID="eliminarutton" runat="server" Text="Eliminar" OnClick="eliminarutton_Click" />
                             </div>
                         </div>
                     </div>
-                </form>
+               
                 </div>
         </div>
             

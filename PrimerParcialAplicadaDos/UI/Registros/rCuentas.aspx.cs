@@ -37,7 +37,7 @@ namespace PrimerParcialAplicadaDos.UI
         private Cuentas LlenaClase(Cuentas cuentas)
         {      
             cuentas.CuentaId = Util.ToInt(CuentaIdTextBox.Text);
-            cuentas.Fecha = Util.ToDateTime(FechaTextBox.Text).Date;
+            cuentas.Fecha = Convert.ToDateTime(FechaTextBox.Text).Date;
             cuentas.Nombre = NombreTextBox.Text;
             cuentas.Balance = Util.ToDecimal(BalanceTextBox.Text);
 
