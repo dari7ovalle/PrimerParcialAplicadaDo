@@ -4,9 +4,17 @@
 
 <html>
 <head runat="server">
+    <link href="/content/bootstrap.min.css" rel="stylesheet" />    
+    <link href="/content/toastr.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="/Scripts/toastr.min.js"></script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
+
 </head>
 <body>
     <form id="form1" runat="server">

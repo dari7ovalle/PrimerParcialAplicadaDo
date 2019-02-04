@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -10,11 +11,10 @@ namespace DAL
     public class Contexto : DbContext
 
     {
-        //public DbSet<Categorias> Categorias { get; set; }
-        //public DbSet<TiposEgresos> TiposEgresos { get; set; }
-        //public DbSet<Presupuestos> Presupuestos { get; set; }
-        //public DbSet<Articulos> Articulo { get; set; }
-        //public DbSet<Cotizaciones> Cotizaciones { get; set; }
+
+        public DbSet<Cuentas> Cuentas { get; set; }
+        public DbSet<Depositos> Depositos { get; set; }
+
 
         public Contexto() : base("ConStr")
         {
