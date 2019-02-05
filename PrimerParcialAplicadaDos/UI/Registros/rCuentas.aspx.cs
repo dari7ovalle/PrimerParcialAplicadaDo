@@ -14,7 +14,8 @@ namespace PrimerParcialAplicadaDos.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            BalanceTextBox.Text = "0";
+            FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
         private void LlenaCampos(Cuentas cuentas)
         {
@@ -34,11 +35,8 @@ namespace PrimerParcialAplicadaDos.UI
         }
 
         private Cuentas LlenaClase(Cuentas cuentas)
-        {
-         // Cuentas cuentas = new Cuentas();
-
+        {      
             cuentas.CuentaId = Util.ToInt(CuentaIdTextBox.Text);
-           // cuentas.Fecha = DateTime.Now.Date;
             cuentas.Fecha = Util.ToDateTime(FechaTextBox.Text).Date;
             cuentas.Nombre = NombreTextBox.Text;
             cuentas.Balance = Util.ToDecimal(BalanceTextBox.Text);
@@ -53,7 +51,7 @@ namespace PrimerParcialAplicadaDos.UI
             Cuentas cuentas = new Cuentas();
             bool paso = false;
 
-            //todo: validaciones adicionales
+       
             LlenaClase(cuentas);
 
             if (IsValid)
@@ -62,12 +60,14 @@ namespace PrimerParcialAplicadaDos.UI
                 {
                     if (paso = repositorio.Guardar(cuentas))
 
-                      //  Util.ShowToastr(this, "saved successfully", "Success", "success");
-                    Response.Write("<script>alert('Guardado Correctamente');</script>");
+                        Util.ShowToastr(this, "saved successfully", "Success", "success");
 
+                 
                     else
                     {
-                        Response.Write("<script>alert('Error al Guardar');</script>");
+                        Util.ShowToastr(this, "Error al Guardar", "Error", "error");
+
+                       
                     }
                     Limpiar();
                 }
@@ -76,12 +76,14 @@ namespace PrimerParcialAplicadaDos.UI
                 {
                     if (paso = repositorio.Modificar(cuentas))
                     {
-                        Response.Write("<script>alert('Modificado Correctamente');</script>");
+                        Util.ShowToastr(this, "Modificado  successfully", "Success", "success");
                         Limpiar();
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al Modificar');</script>");
+                        Util.ShowToastr(this, "Error al Modificar", "Error", "error");
+
+                      
                     }
                 }
             }
@@ -100,13 +102,33 @@ namespace PrimerParcialAplicadaDos.UI
             else
             {
                 Limpiar();
-                Util.ShowToastr(this, "saved successfully", "Error", "error");
-                //  Mensaje(TipoMensaje.Error, "No Encontrado");
-
+                Util.ShowToastr(this, "No Existe en la Base de datos", "Error", "error");
+               
             }
 
 
 
+        }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
+        {
+            BLL.RepositorioBase<Cuentas> repositorio = new BLL.RepositorioBase<Cuentas>();
+            int id = Util.ToInt(CuentaIdTextBox.Text);
+
+            var cuentas = repositorio.Buscar(id);
+
+            if (cuentas == null)
+                Util.ShowToastr(this, "No se puede elliminar Error  ", "Error", "error");
+            
+            else
+                repositorio.Eliminar(id);
+            Util.ShowToastr(this, " Eliminado ", "Success", "success");
+            Limpiar();
+        }
+
+        protected void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

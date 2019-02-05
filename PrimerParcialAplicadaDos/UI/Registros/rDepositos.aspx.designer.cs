@@ -13,6 +13,24 @@ namespace PrimerParcialAplicadaDos.UI {
     public partial class rDepositos {
         
         /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// BuscarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BuscarButton;
+        
+        /// <summary>
         /// DepositoIdTextBox control.
         /// </summary>
         /// <remarks>
@@ -31,15 +49,6 @@ namespace PrimerParcialAplicadaDos.UI {
         protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
         
         /// <summary>
-        /// BuscarLinkButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BuscarLinkButton;
-        
-        /// <summary>
         /// CuentaDropDownList control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace PrimerParcialAplicadaDos.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList CuentaDropDownList;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// ConceptoTextBox control.
@@ -58,6 +76,15 @@ namespace PrimerParcialAplicadaDos.UI {
         protected global::System.Web.UI.WebControls.TextBox ConceptoTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// MontoTextBox control.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,24 @@ namespace PrimerParcialAplicadaDos.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
         /// nuevoButton control.
@@ -76,13 +121,13 @@ namespace PrimerParcialAplicadaDos.UI {
         protected global::System.Web.UI.WebControls.Button nuevoButton;
         
         /// <summary>
-        /// guardarButton control.
+        /// GuardarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guardarButton;
+        protected global::System.Web.UI.WebControls.Button GuardarButton;
         
         /// <summary>
         /// eliminarutton control.
