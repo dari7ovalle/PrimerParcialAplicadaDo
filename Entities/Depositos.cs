@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
+   [Serializable]
    public class Depositos
     {
         [Key]
@@ -14,7 +15,7 @@ namespace Entities
         public DateTime Fecha { get; set; }
         public int CuentaId { get; set; }
         public string Concepto { get; set; }
-        public Decimal Monto { get; set; }
+        public int Monto { get; set; }
 
         public Depositos()
         {

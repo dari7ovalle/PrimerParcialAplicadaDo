@@ -39,7 +39,7 @@ namespace PrimerParcialAplicadaDos.UI
             cuentas.CuentaId = Util.ToInt(CuentaIdTextBox.Text);
             cuentas.Fecha = Convert.ToDateTime(FechaTextBox.Text).Date;
             cuentas.Nombre = NombreTextBox.Text;
-            cuentas.Balance = Util.ToDecimal(BalanceTextBox.Text);
+            cuentas.Balance = Util.ToInt(BalanceTextBox.Text);
 
             return cuentas;
         }

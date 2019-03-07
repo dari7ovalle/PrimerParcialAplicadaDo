@@ -123,7 +123,6 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="UI\Consultas\cCuentas.aspx" />
-    <Content Include="UI\Consultas\cDepositos.aspx" />
     <Content Include="UI\Registros\rCuentas.aspx" />
     <Content Include="UI\Registros\rDepositos.aspx" />
     <Content Include="Web.config" />
@@ -144,13 +143,6 @@
     </Compile>
     <Compile Include="UI\Consultas\cCuentas.aspx.designer.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Consultas\cDepositos.aspx.cs">
-      <DependentUpon>cDepositos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI\Consultas\cDepositos.aspx.designer.cs">
-      <DependentUpon>cDepositos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

@@ -19,6 +19,7 @@ namespace PrimerParcialAplicadaDos.UI
             if (!Page.IsPostBack)
             {
                 LlenarCombos();
+                Cuentas cuentas = new Cuentas();
                 int id = Util.ToInt(Request.QueryString["id"]);
                 if (id > 0)
                 {
@@ -56,16 +57,17 @@ namespace PrimerParcialAplicadaDos.UI
             CuentaDropDownList.DataSource = repositorio.GetList(c => true);
             CuentaDropDownList.DataValueField = "CuentaId";
             CuentaDropDownList.DataTextField = "Nombre";
-            CuentaDropDownList.DataBind();
+            CuentaDropDownList.DataBind(); 
         }
-        private Depositos LlenaClase(Depositos depositos)
+        public  Depositos LlenaClase()
         {
-      
+            Depositos depositos = new Depositos();
+
             depositos.DepositoId = Util.ToInt(DepositoIdTextBox.Text);
             depositos.Fecha = Util.ToDateTime(FechaTextBox.Text);
             depositos.CuentaId = Util.ToInt(CuentaDropDownList.SelectedValue);
             depositos.Concepto = ConceptoTextBox.Text;
-            depositos.Monto = Util.ToDecimal(MontoTextBox.Text);
+            depositos.Monto = Util.ToInt(MontoTextBox.Text);
 
             return depositos;
         }
@@ -78,7 +80,7 @@ namespace PrimerParcialAplicadaDos.UI
 
         protected void eliminarutton_Click(object sender, EventArgs e)
         {
-            RDepositos repositorio = new RDepositos();
+            DepositoRepositorio repositorio = new DepositoRepositorio();
             int id = Util.ToInt(DepositoIdTextBox.Text);
 
             var depositos = repositorio.Buscar(id);
@@ -93,21 +95,17 @@ namespace PrimerParcialAplicadaDos.UI
 
         protected void GuardarButton_Click1(object sender, EventArgs e)
         {
-            RDepositos repositorio = new RDepositos();
-            Depositos depositos = new Depositos();
             bool paso = false;
+            DepositoRepositorio repositorio = new DepositoRepositorio();
+            Depositos depositos = new Depositos();
+           
 
-            //todo: validaciones adicionales
-            LlenaClase(depositos);
-
-            if (IsValid)
-            {
+            depositos= LlenaClase();
+            
                 if (depositos.DepositoId == 0)
                 {
                     if (paso = repositorio.Guardar(depositos))
-
-                        Util.ShowToastr(this, "saved successfully", "Success", "success");
-
+                        Util.ShowToastr(this, "Guardado", "Success", "success");
 
                     else
                     {
@@ -130,7 +128,7 @@ namespace PrimerParcialAplicadaDos.UI
                     }
                 }
             }
-        }
+        
 
         protected void nuevoButton_Click(object sender, EventArgs e)
         {
