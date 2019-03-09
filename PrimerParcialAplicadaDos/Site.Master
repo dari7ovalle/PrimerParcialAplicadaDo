@@ -34,7 +34,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/UI/Registros/rCuentas.aspx">Cuenta </a>
-                                <a class="dropdown-item" href="/UI/Registros/rDepositos.aspx">Depósitos</>
+                                <a class="dropdown-item" href="/UI/Registros/rDepositos.aspx">Depósitos</a>
+                                 <a class="dropdown-item" href="/UI/Registros/rPrestamos.aspx">Prestamo</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">

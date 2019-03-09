@@ -15,6 +15,7 @@ namespace Entities
         public string Nombre { get; set; }
         public int Balance { get; set; }
 
+
         public Cuentas()
         {
             CuentaId = 0;
