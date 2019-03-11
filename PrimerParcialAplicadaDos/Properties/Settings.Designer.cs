@@ -33,5 +33,16 @@ namespace PrimerParcialAplicadaDos.Properties {
                 return ((string)(this["ConStr"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DARI\\DARI7OVALLES;Initial Catalog=PriPytyDbh;Integrated Security=True" +
+            "")]
+        public string PriPytyDbhConnectionString {
+            get {
+                return ((string)(this["PriPytyDbhConnectionString"]));
+            }
+        }
     }
 }

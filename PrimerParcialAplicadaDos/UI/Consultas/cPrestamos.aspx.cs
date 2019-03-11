@@ -14,14 +14,17 @@ namespace PrimerParcialAplicadaDos.UI.Consultas
     public partial class cPrestamos : System.Web.UI.Page
     {
         Expression<Func<Prestamos, bool>> filtro = c => true;
+        public static List<Prestamos> listaPrestamos = new List<Prestamos>();
+        PrestamosRepositorio repositorio = new PrestamosRepositorio();
         protected void Page_Load(object sender, EventArgs e)
         {
+            listaPrestamos = repositorio.GetList(x => true);
 
         }
 
         protected void BuscarLinkButton_Click(object sender, EventArgs e)
         {
-            PrestamosRepositorio repositorio = new PrestamosRepositorio();
+          
             int id = 0;
 
             switch (FiltroDropDownList.SelectedIndex)
@@ -49,9 +52,15 @@ namespace PrimerParcialAplicadaDos.UI.Consultas
                     
             }
 
-            PrestamoGridView.DataSource = repositorio.GetList(filtro);
+            listaPrestamos= repositorio.GetList(filtro);
+            PrestamoGridView.DataSource = listaPrestamos;
             PrestamoGridView.DataBind();
 
+        }
+
+        protected void ImprimirLinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~\Reportes\PrestamosReporteViewer.aspx");
         }
     }
     }

@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cPrestamos.aspx.cs" Inherits="PrimerParcialAplicadaDos.UI.Consultas.cPrestamos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><div class="form-row justify-content-center">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="form-row justify-content-center">
         <div class="form-group col-md-2">
             <asp:Label Text="Filtro" class="text-primary" runat="server" />
             <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" runat="server">
@@ -38,7 +39,13 @@
         </div>
 
     </div>
-
+     <div class="col-lg-1 p-0">
+            <asp:LinkButton ID="ImprimirLinkButton1" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="ImprimirLinkButton1_Click"  >
+                <span class="fas fa-search"></span>
+                 Imprimir
+            </asp:LinkButton>
+        </div>
+    
 
     <div class="form-row justify-content-center">
         <asp:GridView ID="PrestamoGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None ">
