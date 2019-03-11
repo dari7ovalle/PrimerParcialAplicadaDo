@@ -123,10 +123,13 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="UI\Consultas\cCuentas.aspx" />
+    <Content Include="UI\Consultas\cPrestamos.aspx" />
     <Content Include="UI\Registros\rCuentas.aspx" />
     <Content Include="UI\Registros\rDepositos.aspx" />
     <Content Include="UI\Registros\rPrestamos.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -157,6 +160,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cPrestamos.aspx.cs">
+      <DependentUpon>cPrestamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cPrestamos.aspx.designer.cs">
+      <DependentUpon>cPrestamos.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rCuentas.aspx.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>

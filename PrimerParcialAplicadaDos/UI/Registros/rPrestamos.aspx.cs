@@ -80,8 +80,17 @@ namespace PrimerParcialAplicadaDos.UI.Registros
             
         }
 
-       
 
+        private void Limpiar()
+        {
+            PrestamoIdTextBox.Text = "";
+            FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            CuentaDropDownList.SelectedIndex = 0;
+            CapitalTextBox.Text = "";
+            InteresTextBox.Text = "";
+            TiempoTextBox.Text = "";
+            ViewState["Prestamos"] = null;
+        }
 
 
         protected void GuadarButton_Click1(object sender, EventArgs e)
@@ -160,10 +169,29 @@ namespace PrimerParcialAplicadaDos.UI.Registros
             }
             else
             {
-                //Limpiar();
+                Limpiar();
                 Util.ShowToastr(this,
                "No se pudo encontrar el presupuesto especificado",
                "Error", "error");
+            }
+        }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
+        {
+            PrestamosRepositorio repositorio = new PrestamosRepositorio();
+            Prestamos prestamo = repositorio.Buscar(Util.ToInt(PrestamoIdTextBox.Text));
+
+            if (prestamo != null)
+            {
+                repositorio.Eliminar(prestamo.PrestamoId);
+                Util.ShowToastr(this, "Registro eliminado", "Exito", "success");
+                Limpiar();
+            }
+            else
+            {
+                Util.ShowToastr(this, "Error al   eliminr", "Error", "error");
+
+                Limpiar();
             }
         }
     }
