@@ -10,21 +10,22 @@
                 <div class="card-body">
 
 
-                    <div class="col-md-8 col-md-offset-3">
-                        <div class="container">
-                            <div class="form-group">
-                                <asp:Label ID="Label3" runat="server" Text="Id"></asp:Label>
-                                <asp:Button class="btn btn-info btn-sm" ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
+                    
+                    <div class="form-row  align-items-end ">
 
                         <div class="form-group col-md-3">
                             <asp:Label Text="Deposito Id" class="text-primary" runat="server" />
                             <asp:TextBox ID="DepositoIdTextBox" class="form-control input-group" TextMode="Number" placeholder="0" runat="server" />
 
                         </div>
+                        <div class="col-md-8 col-md-offset-3">
+                        <div class="container">
+                            <div class="form-group">
+                               
+                                <asp:Button class="btn btn-info btn-sm" ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" />
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     <div class="form-group col-md-3">
                         <asp:Label Text="Fecha" runat="server" />

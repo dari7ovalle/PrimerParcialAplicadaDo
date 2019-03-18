@@ -9,19 +9,25 @@
             <div class="form-row justify-content-center">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="container">
-                        <div class="form-group" >
-                            <asp:Label Text="Cuenta Id" class="text-primary" runat="server" />
-                            <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click">
-                <span class="fas fa-search"></span>
-                     Buscar
-                                   
-                            </asp:LinkButton>
-                             <div class="col-md-6 col-md-offset-3"> 
+                   
+                  <div class="form-row  align-items-end ">
+
+                        <div class="form-group col-md-3">
+                            <asp:Label Text="cuenta Id" class="text-primary" runat="server" />
                             <asp:TextBox ID="CuentaIdTextBox" class="form-control input-group" TextMode="Number" placeholder="0" runat="server" />
-                       
+                        </div>
+                        <div class="col-md-8 col-md-offset-3">
+                        <div class="container">
+                            <div class="form-group">
+                               
+                                 <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click">
+                <span class="fas fa-search"></span>
+                     Buscar           
+                            </asp:LinkButton>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
+                    </div>
                 <div class="col-md-6 col-md-offset-3">
                     <div class="container">
                         <div class="form-group">

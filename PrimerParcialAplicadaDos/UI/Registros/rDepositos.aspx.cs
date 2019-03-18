@@ -121,7 +121,7 @@ namespace PrimerParcialAplicadaDos.UI
                 {
                     if (paso = repositorio.Modificar(depositos))
                     {
-                        Util.ShowToastr(this, "saved successfully Modificar", "Success", "success");
+                        Util.ShowToastr(this, "saved successfully Modificar", "Info", "info");
                     Limpiar();
                     }
                     else
