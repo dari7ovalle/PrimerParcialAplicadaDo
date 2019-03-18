@@ -47,7 +47,8 @@ namespace PrimerParcialAplicadaDos.UI
         {
             DepositoIdTextBox.Text = depositos.DepositoId.ToString();
             FechaTextBox.Text = depositos.Fecha.ToString("yyyy-MM-dd");
-            CuentaDropDownList.SelectedIndex = depositos.CuentaId;
+            CuentaDropDownList.Text = Convert.ToString(depositos.CuentaId);
+            // CuentaDropDownList.SelectedIndex = depositos.CuentaId;
             ConceptoTextBox.Text = depositos.Concepto;
             MontoTextBox.Text = depositos.Monto.ToString();
         }
@@ -104,13 +105,15 @@ namespace PrimerParcialAplicadaDos.UI
             
                 if (depositos.DepositoId == 0)
                 {
-                    if (paso = repositorio.Guardar(depositos))
-                        Util.ShowToastr(this, "Guardado", "Success", "success");
-
-                    else
-                    {
-                        Util.ShowToastr(this, "Error Al Guardar", "Error", "error");
-                    }
+                if (paso = repositorio.Guardar(depositos))
+                {
+                    Util.ShowToastr(this, "Guardado", "Success", "success");
+                    Limpiar();
+                }
+                else
+                {
+                    Util.ShowToastr(this, "Error Al Guardar", "Error", "error");
+                }
 
                 }
 
@@ -119,7 +122,7 @@ namespace PrimerParcialAplicadaDos.UI
                     if (paso = repositorio.Modificar(depositos))
                     {
                         Util.ShowToastr(this, "saved successfully Modificar", "Success", "success");
-
+                    Limpiar();
                     }
                     else
                     {

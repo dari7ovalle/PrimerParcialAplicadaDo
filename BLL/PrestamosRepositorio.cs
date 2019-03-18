@@ -2,6 +2,7 @@
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,7 +74,43 @@ namespace BLL
             Balance = (capital + montoInteres);// - Cuota;
             return Balance;
         }
-        
+        public override bool Modificar(Prestamos prestamo)
+        {
+            bool paso = false;
+            try
+            {
+                //buscar las entidades que no estan para removerlas
+                var Anterior = _contexto.Prestamos.Find(prestamo.PrestamoId);
+                foreach (var item in Anterior.Detalle)
+                {
+                    if (!prestamo.Detalle.Exists(d => d.Id == item.Id))
+                    {
+                        item.Balance = 0;
+                        _contexto.Entry(item).State = EntityState.Deleted;
+                    }
+                }
+
+                //recorrer el detalle
+                foreach (var item in prestamo.Detalle)
+                {
+                    //Muy importante indicar que pasara con la entidad del detalle
+                    var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
+                    _contexto.Entry(item).State = estado;
+                }
+
+                //Idicar que se esta modificando el encabezado
+                _contexto.Entry(prestamo).State = EntityState.Modified;
+
+                if (_contexto.SaveChanges() > 0)
+                    paso = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
     }
 }
 

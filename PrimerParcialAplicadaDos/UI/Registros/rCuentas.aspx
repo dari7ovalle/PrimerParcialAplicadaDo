@@ -9,7 +9,7 @@
             <div class="form-row justify-content-center">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="container">
-                        <div class="form-group">
+                        <div class="form-group" >
                             <asp:Label Text="Cuenta Id" class="text-primary" runat="server" />
                             <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click">
                 <span class="fas fa-search"></span>
