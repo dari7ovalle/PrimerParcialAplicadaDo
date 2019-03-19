@@ -12,7 +12,7 @@ namespace PrimerParcialAplicadaDos.UI.Registros
 {
     public partial class rPrestamos : System.Web.UI.Page
     {
-        private RepositorioBase<Cuentas> repositorioCuentas = new RepositorioBase<Cuentas>();
+        //private RepositorioBase<Cuentas> repositorioCuentas = new RepositorioBase<Cuentas>();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -53,6 +53,7 @@ namespace PrimerParcialAplicadaDos.UI.Registros
            // prestamo.Detalle = (Prestamos)ViewState["Prestamos"];
             return prestamo;
         }
+
         private void LlenaCampos(Prestamos prestamo)
         {
             PrestamoIdTextBox.Text = prestamo.PrestamoId.ToString();
@@ -67,9 +68,10 @@ namespace PrimerParcialAplicadaDos.UI.Registros
         //Listo
         private void LlenarCombos()
         {
-            CuentaDropDownList.DataSource = repositorioCuentas.GetList(c => true);
-            CuentaDropDownList.DataValueField = "CuentaId";
-            CuentaDropDownList.DataTextField = "Nombre";
+             RepositorioBase<Cuentas> repositorio = new RepositorioBase<Cuentas>();
+            CuentaDropDownList.DataSource = repositorio.GetList(c => true);
+            CuentaDropDownList.DataValueField ="CuentaId";
+            CuentaDropDownList.DataTextField ="Nombre";
             CuentaDropDownList.DataBind();
            
         }
@@ -89,7 +91,8 @@ namespace PrimerParcialAplicadaDos.UI.Registros
             CapitalTextBox.Text = "";
             InteresTextBox.Text = "";
             TiempoTextBox.Text = "";
-            ViewState["Prestamos"] = null;
+            ViewState["Prestamos"] = new Prestamos();
+            this.BindGrid();
         }
 
 
@@ -104,16 +107,20 @@ namespace PrimerParcialAplicadaDos.UI.Registros
          prestamo =LlenaClase(prestamo);
 
             if (Util.ToInt(PrestamoIdTextBox.Text) == 0)
-                paso = repositorio.Guardar(prestamo);
+            {
 
+                paso = repositorio.Guardar(prestamo);
+                Util.ShowToastr(this, "Transacción exitosa", "Exito", "success");
+                 Limpiar();
+            }
             else
                 paso = repositorio.Modificar(prestamo);
 
-            if (paso)
-            {
-                Util.ShowToastr(this, "Transacción exitosa", "Exito", "success");
-                // Limpiar
-            }
+            //if (paso)
+            //{
+            //    Util.ShowToastr(this, "Transacción exitosa", "Exito", "success");
+            //    Limpiar();
+            //}
 
         }
 
@@ -193,6 +200,11 @@ namespace PrimerParcialAplicadaDos.UI.Registros
 
                 Limpiar();
             }
+        }
+
+        protected void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }
