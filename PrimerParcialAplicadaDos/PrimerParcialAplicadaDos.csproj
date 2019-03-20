@@ -107,6 +107,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="IMAGENES\images.png" />
+    <Content Include="IMAGENES\images11.jpg" />
+    <Content Include="IMAGENES\IMAJEJJJ.jpg" />
     <Content Include="Reportes\PrestamosReporteViewer.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -143,6 +147,11 @@
     <Content Include="PriPytyDbhDataSet.xss">
       <DependentUpon>PriPytyDbhDataSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\primerparcialaplicadados - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\primerparcialaplicadados - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\primerparcialaplicadados - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\primerparcialaplicadados - Web Deploy2.pubxml" />
+    <None Include="Properties\PublishProfiles\webbank - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -172,6 +181,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="UI\Consultas\cCuentas.aspx" />
+    <Content Include="UI\Consultas\cDepositos.aspx" />
     <Content Include="UI\Consultas\cPrestamos.aspx" />
     <Content Include="UI\Registros\rCuentas.aspx" />
     <Content Include="UI\Registros\rDepositos.aspx" />
@@ -190,6 +200,13 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PriPytyDbhDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +239,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cDepositos.aspx.cs">
+      <DependentUpon>cDepositos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cDepositos.aspx.designer.cs">
+      <DependentUpon>cDepositos.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\cPrestamos.aspx.cs">
       <DependentUpon>cPrestamos.aspx</DependentUpon>

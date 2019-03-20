@@ -18,13 +18,11 @@ namespace PrimerParcialAplicadaDos.Consultas
         List<Cuentas> cuentas = new List<Cuentas>();
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (!IsPostBack)
-            {
-                cuentas = repositorio.GetList(filtro);
-                DesdeTextBox.Text = DateTime.Now.ToString("dd-MM-yyyy");
-                HastaTextBox.Text = DateTime.Now.ToString("dd-MM-yyyy");
-            }
+            HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            cuentas = repositorio.GetList(filtro);
+               
+            
 
         }
 
@@ -49,8 +47,8 @@ namespace PrimerParcialAplicadaDos.Consultas
                     break;
 
                 case 2:
-                    int.TryParse(CriterioTextBox.Text, out id);
-                    filtro = c => c.CuentaId == id && c.Fecha >= desde && c.Fecha <= hasta;
+                    //int.TryParse(CriterioTextBox.Text, out id);
+                    //filtro = c => c.CuentaId == id && c.Fecha >= desde && c.Fecha <= hasta;
                     break;
 
                 case 3:

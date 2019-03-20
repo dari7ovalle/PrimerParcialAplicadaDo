@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cCuentas.aspx.cs" Inherits="PrimerParcialAplicadaDos.Consultas.cCuentas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cDepositos.aspx.cs" Inherits="PrimerParcialAplicadaDos.UI.Consultas.cDepositos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container">
         <div class="bg-dark p-5 text-center">
-            <h1 class="display-4 text-warning">  CUENTAS</h1>
+            <h1 class="display-4 text-warning"> DEPOSITOS</h1>
         </div>
     </div>
     <div class="form-row justify-content-center">
@@ -23,10 +23,8 @@
                 <asp:Label Text="Filtro" class="text-primary" runat="server" />
                 <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" runat="server">
                     <asp:ListItem>Todo</asp:ListItem>
-                    <asp:ListItem>CuentaId</asp:ListItem>
+                    <asp:ListItem>DepositoId</asp:ListItem>
                     <asp:ListItem>Fecha</asp:ListItem>
-                    <asp:ListItem>Nombre</asp:ListItem>
-                 
                 </asp:DropDownList>
             </div>
 
@@ -42,17 +40,15 @@
             </div>
         </div>
     </div>
-        <div class="form-group">
-            <div class="form-row justify-content-center">
-                <asp:GridView ID="CuentaGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="SkyBlue" />
-                    <Columns>
-                        <asp:BoundField DataField="CuentaId" HeaderText="Cuenta Id" />
-                        <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
-                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
-                      
-                    </Columns>
-                </asp:GridView>
-            </div>
+    <div class="form-group">
+        <div class="form-row justify-content-center">
+            <asp:GridView ID="DepositoGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="SkyBlue" />
+                <Columns>
+                    <asp:BoundField DataField="DepositoId" HeaderText="Cuenta Id" />
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+                </Columns>
+            </asp:GridView>
         </div>
+    </div>
 </asp:Content>

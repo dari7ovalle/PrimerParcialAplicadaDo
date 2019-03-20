@@ -15,36 +15,7 @@ namespace BLL
         public override Prestamos Buscar(int id)
         {
 
-            //Prestamos facturas = new Prestamos();
-            //Contexto contexto = new Contexto();
-
-            //try
-            //{
-            //    facturas = contexto.Prestamos.Find(id);
-
-            //    if (facturas != null)
-            //    {
-            //        facturas.Detalle.Count();
-            //        foreach (var item in facturas.Detalle)
-            //        {
-            //          //  string p = item.ValorPrestamo.ToString();
-            //        }
-            //    }
-
-
-
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
-            //finally
-            //{
-            //    contexto.Dispose();
-            //}
-
-
-            //return facturas;
+            
 
             Contexto contexto = new Contexto();
             Prestamos prestamo = null;
@@ -178,7 +149,7 @@ namespace BLL
                 _contexto.Cuentas.Find(entity.CuentaId).Balance += totalINT;
                 _contexto.Prestamos.Add(entity);
 
-                if (_contexto.SaveChanges() > 0)
+                _contexto.SaveChanges();
                     paso = true;
 
             }
@@ -191,3 +162,4 @@ namespace BLL
     }
 }
 
+ 

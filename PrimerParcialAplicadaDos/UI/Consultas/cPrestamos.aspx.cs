@@ -18,6 +18,8 @@ namespace PrimerParcialAplicadaDos.UI.Consultas
         PrestamosRepositorio repositorio = new PrestamosRepositorio();
         protected void Page_Load(object sender, EventArgs e)
         {
+            HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             listaPrestamos = repositorio.GetList(x => true);
 
         }
@@ -26,7 +28,8 @@ namespace PrimerParcialAplicadaDos.UI.Consultas
         {
           
             int id = 0;
-
+            DateTime desde = Convert.ToDateTime(DesdeTextBox.Text);
+            DateTime hasta = Convert.ToDateTime(HastaTextBox.Text);
             switch (FiltroDropDownList.SelectedIndex)
             {
                 case 0://Todo
@@ -39,8 +42,7 @@ namespace PrimerParcialAplicadaDos.UI.Consultas
                     break;
 
                 case 2://Fecha
-                   // filtro = (c => c.CuentaId.Contains(CriterioTextBox.Text) && c.Fecha >= Desde && c.Fecha <= hasta);
-                    //  filtro = c => c.Fecha.Equals(CriterioTextBox.Text);
+                    filtro = p => true && p.Fecha >= desde && p.Fecha <= hasta;
                     break;
 
                 case 3://CuentaId

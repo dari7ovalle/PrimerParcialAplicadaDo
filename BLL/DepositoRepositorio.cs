@@ -40,7 +40,7 @@ namespace BLL
             try
             {
                 contexto.Depositos.Add(entity);
-                contexto.Cuentas.Find(entity.CuentaId).Balance += entity.Monto;
+                contexto.Cuentas.Find(entity.CuentaId).Balance -= entity.Monto;
                 contexto.SaveChanges();
                 paso = true;
 

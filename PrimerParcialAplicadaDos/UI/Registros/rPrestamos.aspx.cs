@@ -131,12 +131,13 @@ namespace PrimerParcialAplicadaDos.UI.Registros
           List<Cuota>  cuota = new List<Cuota>();
             
         PrestamosRepositorio repositorio = new PrestamosRepositorio();
-        int NoCuota = 1;
+       int NoCuota = Util.ToInt(CuentaDropDownList.SelectedValue);
            decimal porcienInteres= Util.ToDecimal(InteresTextBox.Text);
             decimal capital = Util.ToDecimal(CapitalTextBox.Text);
             int meses = Util.ToInt(TiempoTextBox.Text);
             int AcumulaTiempo = Util.ToInt(TiempoTextBox.Text);
             DateTime fechaGri = DateTime.Now;
+
             decimal monto = (BLL.PrestamosRepositorio.GetInteres(capital, porcienInteres, meses) / 100) + BLL.PrestamosRepositorio.GetCapital(capital, meses),
                 balance= PrestamosRepositorio.GetBalance(Util.ToDecimal(TiempoTextBox.Text), Util.ToDecimal(CapitalTextBox.Text), Util.ToDecimal(InteresTextBox.Text));
         //prestamos = (Prestamos) ViewState["Prestamos"];

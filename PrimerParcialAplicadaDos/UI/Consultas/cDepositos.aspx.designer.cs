@@ -10,7 +10,7 @@
 namespace PrimerParcialAplicadaDos.UI.Consultas {
     
     
-    public partial class cPrestamos {
+    public partial class cDepositos {
         
         /// <summary>
         /// DesdeTextBox control.
@@ -67,21 +67,12 @@ namespace PrimerParcialAplicadaDos.UI.Consultas {
         protected global::System.Web.UI.WebControls.LinkButton BuscarLinkButton;
         
         /// <summary>
-        /// ImprimirLinkButton1 control.
+        /// DepositoGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ImprimirLinkButton1;
-        
-        /// <summary>
-        /// PrestamoGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView PrestamoGridView;
+        protected global::System.Web.UI.WebControls.GridView DepositoGridView;
     }
 }

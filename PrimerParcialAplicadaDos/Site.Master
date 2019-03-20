@@ -19,7 +19,7 @@
     <form id="form1" runat="server">
         <div>
              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="http://localhost:49836/Inicio.aspx">WEB BANK</a>
+                <a class="navbar-brand" href="http://webbank.azurewebsites.net/">WEB BANK</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -43,7 +43,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/UI/Consultas/cCuentas.aspx">Cuenta</>
-                                <a class="dropdown-item" href="/UI/Consultas/Depositos.aspx">Depósitos</a>
+                                <a class="dropdown-item" href="/UI/Consultas/cDepositos.aspx">Depósitos</a>
                                 <a class="dropdown-item" href="/UI/Consultas/cPrestamos.aspx">Prestamos</a>
                             </div>
                         </li>
